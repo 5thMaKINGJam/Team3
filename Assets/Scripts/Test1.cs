@@ -15,7 +15,7 @@ public class Test1 : MonoBehaviour
 {
     
     [SerializeField] private SpriteRenderer sprite_DialogueBox; 
-    [SerializeField] private TextMeshProUGUI txt_Dialogue; 
+    [SerializeField] private TextMeshProUGUI txt_Dialogue;
     [SerializeField] private Image fadeImage; // UI Image for fade effect
     [SerializeField] private float fadeDuration = 1.0f; // Duration of the fade effect
     [SerializeField] private int nextSceneIndex; // Index of the next scene to load
@@ -24,6 +24,7 @@ public class Test1 : MonoBehaviour
     private bool isDialogue= false; 
     private int count = 0 ;
     [SerializeField] private Dialogue[] dialogue; 
+    
 
     public void ShowDialogue(){
         Onoff(true); 
@@ -33,6 +34,7 @@ public class Test1 : MonoBehaviour
 
     private void NextDialogue(){
         txt_Dialogue.text = dialogue[count].dialogue; 
+        
         
         count++; 
     }
