@@ -223,7 +223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &420358515
 RectTransform:
   m_ObjectHideFlags: 0
@@ -489,15 +489,15 @@ MonoBehaviour:
   nextSceneIndex: 0
   dialogueButton: {fileID: 0}
   dialogue:
-  - dialogue: "\uC8FC\uC778\uACF5: \uC5EC\uAE34 \uC5B4\uB514\uC9C0?"
+  - dialogue: "\uC5EC\uAE34 \uC5B4\uB514\uC9C0?"
     cg: {fileID: 5084661014962647745, guid: 2f90eb840bd0cf4438d49759bc08d718, type: 3}
   - dialogue: "???: \uB4DC\uB514\uC5B4 \uCC3E\uC544\uC654\uAD6C\uB098. \uC5EC\uAE30\uB294
       \uACFC\uAC70\uC640 \uD604\uC7AC,\n\uADF8\uB9AC\uACE0 \uBBF8\uB798\uB97C \uC774\uC5B4\uC8FC\uB294
       \uACF5\uAC04. \uB098\uB294 \uC774 \uC138\uACC4\uB97C \uAD00\uC7A5\uD558\uB294
       \uC874\uC7AC\uB780\uB2E4."
     cg: {fileID: 0}
-  - dialogue: "\uC8FC\uC778\uACF5: \uBB50 \uC2E0 \uADF8\uB7F0\uAC70\uC608\uC694\u2026?
-      \n\uC774\uB807\uAC8C \uC5B4\uB9B0\uB370\u2026. "
+  - dialogue: "\uBB50 \uC2E0 \uADF8\uB7F0\uAC70\uC608\uC694\u2026? \n\uC774\uB807\uAC8C
+      \uC5B4\uB9B0\uB370\u2026. "
     cg: {fileID: 5084661014962647745, guid: 2f90eb840bd0cf4438d49759bc08d718, type: 3}
   - dialogue: "\uC808\uB300\uC790: \uB108\uD76C \uC778\uAC04\uB4E4\uC774 \uB9DD\uCE5C
       \uC138\uACC4\uB97C \uBCF5\uAD6C\uD558\uB294 \uB370 \n\uC5BC\uB9C8\uB098 \uB9CE\uC740
@@ -505,17 +505,16 @@ MonoBehaviour:
       \uD63C\uC790\uC11C\uB294 \uBB34\uB9AC\uB77C\uACE0 \uD310\uB2E8\uD574\uC11C
       \uBD88\uB800\uB2E4. "
     cg: {fileID: -1940738496428130850, guid: 2f90eb840bd0cf4438d49759bc08d718, type: 3}
-  - dialogue: "\uC8FC\uC778\uACF5: \uC81C\uAC00\u2026 \uBB58 \uD560 \uC218 \uC788\uC8E0?
-      \n\uC800\uB294 \uC544\uBB34\uAC83\uB3C4 \uBABB\uD558\uB294\uB370\u2026. "
+  - dialogue: "\uC81C\uAC00\u2026 \uBB58 \uD560 \uC218 \uC788\uC8E0? \n\uC800\uB294
+      \uC544\uBB34\uAC83\uB3C4 \uBABB\uD558\uB294\uB370\u2026. "
     cg: {fileID: 5084661014962647745, guid: 2f90eb840bd0cf4438d49759bc08d718, type: 3}
-  - dialogue: "\uC808\uB300\uC790: \uB0B4\uAC00 \uACFC\uAC70\uC5D0 \uB450\uACE0 \uC628
-      \uBCF4\uC11D\uB4E4\uC744 \uCC3E\uC544\uC8FC\uBA74\n\uB41C\uB2E4. \uAC01 \uACC4\uC808\uC5D0
-      \uB9DE\uB294 \uC544\uC774\uB4E4\uC5D0\uAC8C \uD558\uB098\uC529\n\uB9E1\uACA8\uB480\uC9C0.
+  - dialogue: "\uB0B4\uAC00 \uACFC\uAC70\uC5D0 \uB450\uACE0 \uC628 \uBCF4\uC11D\uB4E4\uC744
+      \uCC3E\uC544\uC8FC\uBA74\n\uB41C\uB2E4. \uAC01 \uACC4\uC808\uC5D0 \uB9DE\uB294
+      \uC544\uC774\uB4E4\uC5D0\uAC8C \uD558\uB098\uC529\n\uB9E1\uACA8\uB480\uC9C0.
       \uCC3E\uB294 \uB370\uB294 \uD06C\uAC8C \uC5B4\uB824\uC6C0\uC774 \uC5C6\uC744
       \uAC70\uB2E4."
     cg: {fileID: -1940738496428130850, guid: 2f90eb840bd0cf4438d49759bc08d718, type: 3}
-  - dialogue: "\uC8FC\uC778\uACF5: \uC81C\uAC00 \uADF8\uAC78 \uC65C \uD574\uC57C
-      \uD558\uB294\uB370\uC694?"
+  - dialogue: "\uC81C\uAC00 \uADF8\uAC78 \uC65C \uD574\uC57C \uD558\uB294\uB370\uC694?"
     cg: {fileID: 5084661014962647745, guid: 2f90eb840bd0cf4438d49759bc08d718, type: 3}
   - dialogue: "\uC808\uB300\uC790: \uB2E4 \uC774\uC720\uAC00 \uC788\uC5B4. \uBCF4\uC11D\uB4E4\uC744
       \uBAA8\uB450 \uCC3E\uC544\uC624\uBA74\n\uB9D0\uD574\uC8FC\uB9C8. \uC544, \uD55C\uAC00\uC9C0
