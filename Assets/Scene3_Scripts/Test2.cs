@@ -13,7 +13,7 @@ public class Dialogue2{
 }
 public class Test2 : MonoBehaviour
 {
-    [SerializeField]private SpriteRenderer sprite_StandingCG;
+   
     [SerializeField] private SpriteRenderer sprite_DialogueBox; 
     [SerializeField] private TextMeshProUGUI txt_Dialogue; 
     [SerializeField] private Image fadeImage; // UI Image for fade effect
@@ -34,12 +34,12 @@ public class Test2 : MonoBehaviour
 
     private void NextDialogue(){
         txt_Dialogue.text = dialogue[count].dialogue; 
-        sprite_StandingCG.sprite = dialogue[count].cg; 
+        
         count++; 
     }
     private void Onoff(bool _flag){
         sprite_DialogueBox.gameObject.SetActive(_flag); 
-        sprite_StandingCG.gameObject.SetActive(_flag);
+        
         txt_Dialogue.gameObject.SetActive(_flag); 
         isDialogue = _flag; 
     }

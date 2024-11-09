@@ -14,6 +14,7 @@ public class MysteryGame : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
     [SerializeField] private EventSystem eventSystem;
     public static Vector2 DefaultPos;
 
+
     void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
     {
         DefaultPos = transform.position;

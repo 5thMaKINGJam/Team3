@@ -31,6 +31,7 @@ public class TreasurePrint : MonoBehaviour
     {
         Debug.Log("ShowSingleMessage called");
         treasureImage.gameObject.SetActive(true);
+        isTreasureImageVisible = true; 
 
          
     }
