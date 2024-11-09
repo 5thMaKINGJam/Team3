@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class Dialogue{
     [TextArea]
     public string dialogue; 
-    public Sprite cg; 
+    
 
 }
 public class Test1 : MonoBehaviour

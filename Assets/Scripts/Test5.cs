@@ -10,7 +10,7 @@ public class Dialogue5
 {
     [TextArea]
     public string dialogue;
-    public Sprite cg;
+
 }
 
 public class Test5 : MonoBehaviour
