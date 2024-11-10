@@ -14,7 +14,7 @@ public class Dialogue{
 public class Test1 : MonoBehaviour
 {
     
-    [SerializeField] private SpriteRenderer sprite_DialogueBox; 
+    [SerializeField] private Image sprite_DialogueBox; 
     [SerializeField] private TextMeshProUGUI txt_Dialogue;
     [SerializeField] private Image fadeImage; // UI Image for fade effect
     [SerializeField] private float fadeDuration = 1.0f; // Duration of the fade effect
@@ -82,7 +82,7 @@ public class Test1 : MonoBehaviour
             yield return null;
         }
         
-        // Load the next scene after the fade out
+        //Load the next scene after the fade out
         SceneManager.LoadScene("3");
         
     }

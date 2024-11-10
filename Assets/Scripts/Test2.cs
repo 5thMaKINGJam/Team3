@@ -14,7 +14,7 @@ public class Dialogue2{
 public class Test2 : MonoBehaviour
 {
    
-    [SerializeField] private SpriteRenderer sprite_DialogueBox; 
+    [SerializeField] private Image sprite_DialogueBox; 
     [SerializeField] private TextMeshProUGUI txt_Dialogue; 
     [SerializeField] private Image fadeImage; // UI Image for fade effect
     [SerializeField] private float fadeDuration = 1.0f; // Duration of the fade effect

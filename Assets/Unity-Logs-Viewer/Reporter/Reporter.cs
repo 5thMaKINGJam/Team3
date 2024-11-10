@@ -371,11 +371,11 @@ public class Reporter : MonoBehaviour
 			created = true;
 			//addSample();
 		}
-		else {
-			Debug.LogWarning("tow manager is exists delete the second");
-			DestroyImmediate(gameObject, true);
-			return;
-		}
+		//else {
+		//	Debug.LogWarning("tow manager is exists delete the second");
+		//	DestroyImmediate(gameObject, true);
+		//	return;
+		//}
 
 
 		//initialize gui and styles for gui purpose

@@ -26,7 +26,7 @@ public class BombPrint : MonoBehaviour
         
         txt_Dialogue.gameObject.SetActive(true);
         
-        txt_Dialogue.text = "꽝입니다";
+        txt_Dialogue.text = "알 수 없는 힘의 속임수에 넘어갔습니다";
         StartCoroutine(HideMessageAfterDelay(1.0f)); // Hide after 1 second
 
         
