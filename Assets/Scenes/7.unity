@@ -862,6 +862,7 @@ MonoBehaviour:
   sprite_DialogueBox: {fileID: 2123791264}
   txt_Dialogue: {fileID: 1855874721}
   treasureImage: {fileID: 304334759}
+  itemSprite: {fileID: 21300000, guid: f5831b4c9d7304d65a62910fc45b4b8e, type: 3}
 --- !u!1 &473982361
 GameObject:
   m_ObjectHideFlags: 0
