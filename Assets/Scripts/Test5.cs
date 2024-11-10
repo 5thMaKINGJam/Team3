@@ -116,7 +116,9 @@ public class Test5 : MonoBehaviour
             yield return null;
         }
         
-        // Load the next scene after the fade out
-        SceneManager.LoadScene("6");
+        
+    }
+    public void GameExit(){
+        Application.Quit(); 
     }
 }

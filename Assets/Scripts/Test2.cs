@@ -82,7 +82,7 @@ public class Test2 : MonoBehaviour
         }
         
         // Load the next scene after the fade out
-        SceneManager.LoadScene("4");
+        SceneManager.LoadScene("MainScene");
         
     }
 

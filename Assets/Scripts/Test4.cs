@@ -114,8 +114,10 @@ public class Test4 : MonoBehaviour
             fadeImage.color = new Color(0, 0, 0, timer / fadeDuration);
             yield return null;
         }
-        
-        // Load the next scene after the fade out
-        SceneManager.LoadScene("5");
+    
+    }
+
+    public void GameExit(){
+        Application.Quit(); 
     }
 }
