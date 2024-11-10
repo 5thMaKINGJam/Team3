@@ -1,11 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-public class CollectableItem : MonoBehaviour
+using UnityEngine.EventSystems;
+
+public class CollectableItem : MonoBehaviour, IPointerClickHandler
 {
     public Sprite itemSprite; // 이 아이템의 스프라이트 (아이템 이미지)
 
-    private void OnMouseDown() // Collider 2D가 있는 오브젝트를 클릭할 때 호출됨
+    public void OnPointerClick(PointerEventData eventData)
     {
         // InventoryManager의 AddItemToSlot 메서드를 호출하여 아이템을 인벤토리에 추가
         InventoryManager.Instance.AddItemToSlot(itemSprite);

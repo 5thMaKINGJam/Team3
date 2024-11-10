@@ -36,15 +36,7 @@ public class TreasurePrint : MonoBehaviour
         treasureImage.gameObject.SetActive(true);
         isTreasureImageVisible = true;
 
-        if (InventoryManager.Instance != null)
-        {
-            InventoryManager.Instance.AddItemToSlot(itemSprite);
-            Debug.Log("Item added to inventory: " + itemSprite.name);
-        }
-        else
-        {
-            Debug.LogError("InventoryManager instance not found!");
-        }
+        
 
        
          
