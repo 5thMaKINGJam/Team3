@@ -14,7 +14,6 @@ public class Dialogue3
 
 public class Test4 : MonoBehaviour
 {
-   
     [SerializeField] private Image sprite_DialogueBox;
     [SerializeField] private TextMeshProUGUI txt_Dialogue;
     [SerializeField] private Image fadeImage; // UI Image for fade effect
@@ -22,8 +21,8 @@ public class Test4 : MonoBehaviour
     [SerializeField] private int nextSceneIndex; // Index of the next scene to load
     [SerializeField] private Image[] imagesToShow; // Images to display sequentially
     [SerializeField] private float imageDisplayDuration = 2.0f; // Duration each image is displayed
-
-   [SerializeField] private Button dialogueButton; // Button to show/hide during transitions
+    [SerializeField] private GameObject creditsPanel; // Panel to display credits
+    [SerializeField] private Button dialogueButton; // Button to show/hide during transitions
 
     private bool isDialogue = false;
     private int count = 0;
@@ -39,14 +38,12 @@ public class Test4 : MonoBehaviour
     private void NextDialogue()
     {
         txt_Dialogue.text = dialogue[count].dialogue;
-        
         count++;
     }
 
     private void Onoff(bool _flag)
     {
         sprite_DialogueBox.gameObject.SetActive(_flag);
-        
         txt_Dialogue.gameObject.SetActive(_flag);
         isDialogue = _flag;
     }
@@ -60,6 +57,12 @@ public class Test4 : MonoBehaviour
         foreach (var image in imagesToShow)
         {
             image.gameObject.SetActive(false);
+        }
+
+        // Ensure credits panel is initially inactive
+        if (creditsPanel != null)
+        {
+            creditsPanel.SetActive(false);
         }
     }
 
@@ -82,8 +85,7 @@ public class Test4 : MonoBehaviour
 
     private IEnumerator ShowImagesSequentially()
     {
-
-         // Turn off dialogue button when images start to show
+        // Turn off dialogue button when images start to show
         if (dialogueButton != null)
         {
             dialogueButton.gameObject.SetActive(false);
@@ -96,16 +98,18 @@ public class Test4 : MonoBehaviour
             image.gameObject.SetActive(false);
         }
 
-        StartCoroutine(FadeOutAndLoadScene()); // Start fade out and scene transition after images
+        StartCoroutine(ShowCreditsAndFadeOut()); // Start showing credits and fade out after images
     }
 
-    private IEnumerator FadeOutAndLoadScene()
+    private IEnumerator ShowCreditsAndFadeOut()
     {
-         // Turn off dialogue button when images start to show
-        if (dialogueButton != null)
+        // Activate credits panel
+        if (creditsPanel != null)
         {
-            dialogueButton.gameObject.SetActive(false);
+            creditsPanel.SetActive(true);
         }
+
+        yield return new WaitForSeconds(3.0f); // Wait for a few seconds to show the credits
 
         float timer = 0;
         while (timer < fadeDuration)
@@ -114,10 +118,12 @@ public class Test4 : MonoBehaviour
             fadeImage.color = new Color(0, 0, 0, timer / fadeDuration);
             yield return null;
         }
-    
+
+        Application.Quit(); // Exit the game after fade out
     }
 
-    public void GameExit(){
-        Application.Quit(); 
+    public void GameExit()
+    {
+        Application.Quit();
     }
 }

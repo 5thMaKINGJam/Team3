@@ -7,6 +7,6 @@ using UnityEngine.SceneManagement;
 public class toSpringBattle : MonoBehaviour
 {
     public void SceneChange(){
-        SceneManager.LoadScene("SpringBattle"); 
+        SceneManager.LoadScene("battle_spring"); 
     }
 }

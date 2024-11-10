@@ -7,6 +7,6 @@ public class SceneButton : MonoBehaviour
 {
     public void OnButtonClick()
     {
-        SceneManager.LoadScene("8");
+        SceneManager.LoadScene("Spring");
     }
 }

@@ -14,13 +14,13 @@ public class Dialogue6
 
 public class Test6 : MonoBehaviour
 {
-    
     [SerializeField] private Image sprite_DialogueBox;
     [SerializeField] private TextMeshProUGUI txt_Dialogue;
     [SerializeField] private Image fadeImage; // UI Image for fade effect
     [SerializeField] private float fadeDuration = 1.0f; // Duration of the fade effect
     [SerializeField] private int nextSceneIndex; // Index of the next scene to load
     [SerializeField] private Button dialogueButton; // Button to show/hide during transitions
+    [SerializeField] private GameObject creditsPanel; // Panel to display credits
 
     private bool isDialogue = false;
     private int count = 0;
@@ -37,7 +37,6 @@ public class Test6 : MonoBehaviour
     private void NextDialogue()
     {
         txt_Dialogue.text = dialogue[count].dialogue;
-        
 
         // Check if the specific dialogue needs to shake
         if (count == 1) // Apply shake only to the second dialogue
@@ -70,7 +69,6 @@ public class Test6 : MonoBehaviour
     private void Onoff(bool _flag)
     {
         sprite_DialogueBox.gameObject.SetActive(_flag);
-        
         txt_Dialogue.gameObject.SetActive(_flag);
         isDialogue = _flag;
     }
@@ -79,6 +77,12 @@ public class Test6 : MonoBehaviour
     {
         Onoff(false);
         fadeImage.color = new Color(0, 0, 0, 0); // Ensure fade image is transparent at start
+
+        // Ensure credits panel is initially inactive
+        if (creditsPanel != null)
+        {
+            creditsPanel.SetActive(false);
+        }
     }
 
     private void Update()
@@ -92,13 +96,13 @@ public class Test6 : MonoBehaviour
                 else
                 {
                     Onoff(false);
-                    StartCoroutine(FadeOutAndLoadScene()); // Start fade out and scene transition
+                    StartCoroutine(FadeOutAndShowCredits()); // Start fade out and show credits
                 }
             }
         }
     }
 
-    private IEnumerator FadeOutAndLoadScene()
+    private IEnumerator FadeOutAndShowCredits()
     {
         // Turn off dialogue button when images start to show
         if (dialogueButton != null)
@@ -113,8 +117,20 @@ public class Test6 : MonoBehaviour
             fadeImage.color = new Color(0, 0, 0, timer / fadeDuration);
             yield return null;
         }
-        
-        // Load the next scene after the fade out
-        SceneManager.LoadScene(nextSceneIndex);
+
+        // Show the credits panel after the fade out is complete
+        if (creditsPanel != null)
+        {
+            creditsPanel.SetActive(true);
+        }
+
+        // Wait for a few seconds to show the credits before exiting the game
+        yield return new WaitForSeconds(5.0f); // Adjust the duration as needed
+        Application.Quit(); // Exit the game
+    }
+
+    public void GameExit()
+    {
+        Application.Quit();
     }
 }

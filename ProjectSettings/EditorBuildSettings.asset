@@ -41,4 +41,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: aa01481c3918be7408cf667ca166eaac
+  - enabled: 1
+    path: Assets/Scenes/battle_fall.unity
+    guid: 822fe7505c3609748b2b7a3c4dc91cf8
+  - enabled: 1
+    path: Assets/Scenes/battle_spring.unity
+    guid: 84739e80d627ad2498fddd3e913b7b9e
+  - enabled: 1
+    path: Assets/Scenes/collectTreasure.unity
+    guid: cdf995e8574850b47bd24d9b7f6795f6
   m_configObjects: {}

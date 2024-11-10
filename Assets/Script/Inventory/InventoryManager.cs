@@ -1,51 +1,57 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;
-    public Image[] itemSlots; // 4°³ÀÇ ItemSlot ÀÌ¹ÌÁö¸¦ ´ãÀ» ¹è¿­
+    public Image[] itemSlots; // 4ï¿½ï¿½ï¿½ï¿½ ItemSlot ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­
 
     private void Awake()
     {
         if (Instance == null)
+        {
             Instance = this;
+            DontDestroyOnLoad(gameObject); // ï¿½ï¿½ ï¿½ï¿½È¯ ï¿½Ã¿ï¿½ï¿½ï¿½ ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Êµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        }
         else
+        {
             Destroy(gameObject);
+        }
 
-        // itemSlots ¹è¿­ÀÌ ºñ¾îÀÖ´Â °æ¿ì °æ°í ¸Þ½ÃÁö Ç¥½Ã
+        // itemSlots ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
         if (itemSlots == null || itemSlots.Length == 0)
         {
-            Debug.LogWarning("itemSlots ¹è¿­ÀÌ ºñ¾î ÀÖ½À´Ï´Ù. Inspector¿¡¼­ itemSlots¿¡ ½½·ÔÀ» ÇÒ´çÇØ ÁÖ¼¼¿ä.");
+            Debug.LogWarning("itemSlots ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½. Inspectorï¿½ï¿½ï¿½ï¿½ itemSlotsï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò´ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.");
         }
     }
 
     public void AddItemToSlot(Sprite itemSprite)
     {
-        bool itemAdded = false; // ¾ÆÀÌÅÛÀÌ Ãß°¡µÇ¾ú´ÂÁö È®ÀÎÇÏ´Â º¯¼ö
+        bool itemAdded = false; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½
 
         foreach (var slot in itemSlots)
         {
             if (slot == null)
             {
                 Debug.LogWarning("Slot is null.");
-                continue; // ½½·ÔÀÌ nullÀÏ °æ¿ì °Ç³Ê¶Ý´Ï´Ù.
+                continue; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ nullï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ç³Ê¶Ý´Ï´ï¿½.
             }
 
-            Debug.Log($"Slot sprite: {slot.sprite}"); // °¢ ½½·ÔÀÇ sprite »óÅÂ È®ÀÎ
+            Debug.Log($"Slot sprite: {slot.sprite}");
 
-            if (slot.sprite == null) // ºó ½½·ÔÀ» Ã£À½
+            if (slot.sprite == null) // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½
             {
-                slot.sprite = itemSprite; // ¾ÆÀÌÅÛ ÀÌ¹ÌÁö ÇÒ´ç
-                itemAdded = true; // ¾ÆÀÌÅÛÀÌ Ãß°¡µÊÀ» Ç¥½Ã
-                break; // Ã¹ ¹øÂ° ºó ½½·Ô¿¡¸¸ ÇÒ´çÇÏ°í ÇÔ¼ö Á¾·á
+                slot.sprite = itemSprite; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½Ò´ï¿½
+                itemAdded = true; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
+                break; // Ã¹ ï¿½ï¿½Â° ï¿½ï¿½ ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ ï¿½Ò´ï¿½ï¿½Ï°ï¿½ ï¿½Ô¼ï¿½ ï¿½ï¿½ï¿½ï¿½
             }
         }
 
         if (!itemAdded)
         {
-            Debug.LogWarning("¸ðµç ½½·ÔÀÌ ÀÌ¹Ì °¡µæ Ã¡½À´Ï´Ù.");
+            Debug.LogWarning("ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¡ï¿½ï¿½ï¿½Ï´ï¿½.");
+            SceneManager.LoadScene("collectTreasure"); // collectTreasure ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
         }
     }
-
 }

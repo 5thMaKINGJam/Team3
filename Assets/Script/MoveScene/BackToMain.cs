@@ -7,6 +7,6 @@ public class BackToMain : MonoBehaviour
 {
     public void GoToMainScene()
     {
-        SceneManager.LoadScene("MainScene"); // "MainScene"À» Main ¾ÀÀÇ Á¤È®ÇÑ ÀÌ¸§À¸·Î ¼³Á¤
+        SceneManager.LoadScene("MainScene"); // "MainScene"ï¿½ï¿½ Main ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È®ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
 }

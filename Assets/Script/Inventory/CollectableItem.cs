@@ -3,14 +3,14 @@ using UnityEngine.EventSystems;
 
 public class CollectableItem : MonoBehaviour, IPointerClickHandler
 {
-    public Sprite itemSprite; // ÀÌ ¾ÆÀÌÅÛÀÇ ½ºÇÁ¶óÀÌÆ® (¾ÆÀÌÅÛ ÀÌ¹ÌÁö)
+    public Sprite itemSprite; // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½)
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        // InventoryManagerÀÇ AddItemToSlot ¸Ş¼­µå¸¦ È£ÃâÇÏ¿© ¾ÆÀÌÅÛÀ» ÀÎº¥Åä¸®¿¡ Ãß°¡
+        // InventoryManagerï¿½ï¿½ AddItemToSlot ï¿½Ş¼ï¿½ï¿½å¸¦ È£ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îºï¿½ï¿½ä¸®ï¿½ï¿½ ï¿½ß°ï¿½
         InventoryManager.Instance.AddItemToSlot(itemSprite);
 
-        // ¾ÆÀÌÅÛÀ» È¹µæÇÑ ÈÄ »ç¶óÁöµµ·Ï ºñÈ°¼ºÈ­ (¶Ç´Â »èÁ¦)
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¹ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­ (ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½)
         gameObject.SetActive(false);
     }
 }
